@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import LoginResponse from "./LoginResponse";
 
 class Login extends Component {
   constructor(props) {
@@ -6,6 +7,7 @@ class Login extends Component {
     this.state = {
       username: "jarvis",
       password: "",
+      loginStatus: false,
     };
   }
 
@@ -16,9 +18,23 @@ class Login extends Component {
     });
   };
 
+  loginResponse = () => {
+    if (this.state.username === "jarvis" && this.state.password === "jarvis") {
+      this.setState({ loginStatus: true });
+    } else {
+      this.setState({ loginStatus: false });
+    }
+  };
+
   render() {
     return (
       <div>
+        <LoginResponse status={this.state.loginStatus} />
+        {/*    {this.state.loginStatus === true ? (
+           <div>Login Successfull</div>
+         ) : (
+           <div>Login Failed</div>
+        )} */}
         Username :{" "}
         <input
           type="text"
@@ -33,7 +49,7 @@ class Login extends Component {
           value={this.state.password}
           onChange={this.onChange}
         />
-        <button>LOGIN</button>
+        <button onClick={this.loginResponse}>LOGIN</button>
       </div>
     );
   }
