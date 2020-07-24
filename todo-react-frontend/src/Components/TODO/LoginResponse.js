@@ -6,7 +6,7 @@ function LoginResponse(props) {
       {props.status === true ? (
         <div> Login Successfull </div>
       ) : props.status === false ? (
-        <div> Login Failed </div>
+        <div>Invalid Credential</div>
       ) : null}
     </div>
   );
