@@ -7,7 +7,7 @@ class Login extends Component {
     this.state = {
       username: "jarvis",
       password: "",
-      loginStatus: false,
+      loginStatus: "",
     };
   }
 
@@ -29,7 +29,6 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <LoginResponse status={this.state.loginStatus} />
         {/*    {this.state.loginStatus === true ? (
            <div>Login Successfull</div>
          ) : (
@@ -50,6 +49,7 @@ class Login extends Component {
           onChange={this.onChange}
         />
         <button onClick={this.loginResponse}>LOGIN</button>
+        <LoginResponse status={this.state.loginStatus} />
       </div>
     );
   }
