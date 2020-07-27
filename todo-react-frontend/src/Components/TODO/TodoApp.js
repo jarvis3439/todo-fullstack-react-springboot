@@ -4,12 +4,15 @@ import Welcome from "./Welcome";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import TodoList from "./TodoList";
+import Header from "./Header";
+import Footer from "./Footer";
 
 class TodoApp extends Component {
   render() {
     return (
       <div className="TodoApp">
         <Router>
+          <Header />
           <Switch>
             <Route path="/" exact component={Login} />
             <Route path="/login" component={Login} />
@@ -17,6 +20,7 @@ class TodoApp extends Component {
             <Route path="/todos" component={TodoList} />
             <Route component={ErrorPage} />
           </Switch>
+          <Footer />
         </Router>
       </div>
     );
