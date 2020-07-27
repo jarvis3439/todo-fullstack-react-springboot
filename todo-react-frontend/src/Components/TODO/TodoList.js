@@ -6,9 +6,24 @@ class TodoList extends Component {
 
     this.state = {
       todos: [
-        { id: 1, description: "Complete Task" },
-        { id: 2, description: "Go to Gym" },
-        { id: 3, description: "Be SelfConfident" },
+        {
+          id: 1,
+          description: "Complete Task",
+          targetDate: new Date(),
+          completed: false,
+        },
+        {
+          id: 2,
+          description: "Go to Gym",
+          targetDate: new Date(),
+          completed: false,
+        },
+        {
+          id: 3,
+          description: "Be SelfConfident",
+          targetDate: new Date(),
+          completed: false,
+        },
       ],
     };
   }
@@ -21,6 +36,8 @@ class TodoList extends Component {
             <tr>
               <th>ID</th>
               <th>Description</th>
+              <th>Target Date</th>
+              <th>Completed ?</th>
             </tr>
           </thead>
           <tbody>
@@ -28,6 +45,8 @@ class TodoList extends Component {
               <tr>
                 <td>{todo.id}</td>
                 <td>{todo.description}</td>
+                <td>{todo.targetDate.toString()}</td>
+                <td>{todo.completed.toString()}</td>
               </tr>
             ))}
           </tbody>
