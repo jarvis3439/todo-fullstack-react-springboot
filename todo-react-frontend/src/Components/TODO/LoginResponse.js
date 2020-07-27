@@ -3,10 +3,10 @@ import React from "react";
 function LoginResponse(props) {
   return (
     <div>
-      {props.status === true ? (
-        <div> Login Successfull </div>
+      {props.status ? (
+        <div>Success</div>
       ) : props.status === false ? (
-        <div>Invalid Credential</div>
+        <div>Invalid</div>
       ) : null}
     </div>
   );

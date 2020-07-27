@@ -21,7 +21,7 @@ class Login extends Component {
   loginResponse = () => {
     if (this.state.username === "jarvis" && this.state.password === "jarvis") {
       this.setState({ loginStatus: true });
-      this.props.history.push("/welcome");
+      this.props.history.push(`/welcome/${this.state.username}`);
     } else {
       this.setState({ loginStatus: false });
     }
@@ -35,6 +35,7 @@ class Login extends Component {
          ) : (
            <div>Login Failed</div>
         )} */}
+        <h1> LOGIN </h1>
         Username :{" "}
         <input
           type="text"
