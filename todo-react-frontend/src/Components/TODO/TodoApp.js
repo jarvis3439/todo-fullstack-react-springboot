@@ -6,6 +6,7 @@ import ErrorPage from "./ErrorPage";
 import TodoList from "./TodoList";
 import Header from "./Header";
 import Footer from "./Footer";
+import Logout from "./Logout";
 
 class TodoApp extends Component {
   render() {
@@ -18,6 +19,7 @@ class TodoApp extends Component {
             <Route path="/login" component={Login} />
             <Route path="/welcome/:name" component={Welcome} />
             <Route path="/todos" component={TodoList} />
+            <Route path="/logout" component={Logout} />
             <Route component={ErrorPage} />
           </Switch>
           <Footer />

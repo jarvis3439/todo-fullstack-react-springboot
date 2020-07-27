@@ -5,7 +5,7 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "jarvis",
+      username: "",
       password: "",
       loginStatus: "",
     };
@@ -35,23 +35,36 @@ class Login extends Component {
          ) : (
            <div>Login Failed</div>
         )} */}
-        <h1> LOGIN </h1>
-        Username :{" "}
-        <input
-          type="text"
-          name="username"
-          value={this.state.username}
-          onChange={this.onChange}
-        />
-        Password :{" "}
-        <input
-          type="password"
-          name="password"
-          value={this.state.password}
-          onChange={this.onChange}
-        />
-        <button onClick={this.loginResponse}>LOGIN</button>
-        <LoginResponse status={this.state.loginStatus} />
+
+        <div className="login-form">
+          <h1 className="text-center"> LOGIN </h1>
+          <div className="form-group">
+            <input
+              placeholder="Username"
+              className="form-control"
+              type="text"
+              name="username"
+              value={this.state.username}
+              onChange={this.onChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              placeholder="Password"
+              className="form-control"
+              type="password"
+              name="password"
+              value={this.state.password}
+              onChange={this.onChange}
+            />
+          </div>
+          <div className="form-group">
+            <button className="btn btn-primary" onClick={this.loginResponse}>
+              LOGIN
+            </button>
+          </div>
+          <LoginResponse status={this.state.loginStatus} />
+        </div>
       </div>
     );
   }

@@ -30,27 +30,27 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <h1>TODO List</h1>
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Description</th>
-              <th>Target Date</th>
-              <th>Completed ?</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.state.todos.map((todo) => (
+        <h1>Todos List</h1>
+        <div className="container">
+          <table className="table">
+            <thead>
               <tr>
-                <td>{todo.id}</td>
-                <td>{todo.description}</td>
-                <td>{todo.targetDate.toString()}</td>
-                <td>{todo.completed.toString()}</td>
+                <th>Description</th>
+                <th>Target Date</th>
+                <th>Completed ?</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {this.state.todos.map((todo) => (
+                <tr>
+                  <td>{todo.description}</td>
+                  <td>{todo.targetDate.toString()}</td>
+                  <td>{todo.completed.toString()}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
