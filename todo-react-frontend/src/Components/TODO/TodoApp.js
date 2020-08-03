@@ -4,27 +4,28 @@ import Welcome from "./Welcome";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ErrorPage from "./ErrorPage";
 import TodoList from "./TodoList";
-import Header from "./Header";
 import Footer from "./Footer";
 import Logout from "./Logout";
+import HeaderComponent from "./HeaderComponent";
+import AuthenticatedRoute from "../Security/AuthenticatedRoute";
 
 class TodoApp extends Component {
   render() {
     return (
-      <div className="TodoApp">
-        <Router>
-          <Header />
+      <Router>
+        <div className="TodoApp">
+          <HeaderComponent />
           <Switch>
             <Route path="/" exact component={Login} />
             <Route path="/login" component={Login} />
-            <Route path="/welcome/:name" component={Welcome} />
-            <Route path="/todos" component={TodoList} />
-            <Route path="/logout" component={Logout} />
+            <AuthenticatedRoute path="/welcome/:name" component={Welcome} />
+            <AuthenticatedRoute path="/todos" component={TodoList} />
+            <AuthenticatedRoute path="/logout" component={Logout} />
             <Route component={ErrorPage} />
           </Switch>
           <Footer />
-        </Router>
-      </div>
+        </div>
+      </Router>
     );
   }
 }

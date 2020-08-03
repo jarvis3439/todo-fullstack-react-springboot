@@ -42,7 +42,7 @@ class TodoList extends Component {
             </thead>
             <tbody>
               {this.state.todos.map((todo) => (
-                <tr>
+                <tr key={todo.id}>
                   <td>{todo.description}</td>
                   <td>{todo.targetDate.toString()}</td>
                   <td>{todo.completed.toString()}</td>

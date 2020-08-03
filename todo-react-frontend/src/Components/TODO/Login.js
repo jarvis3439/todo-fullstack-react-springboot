@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import LoginResponse from "./LoginResponse";
-import AuthenticationService from "../Security/AuthenticationService";
+import Authentication from "../Security/Authentication";
 
 class Login extends Component {
   constructor(props) {
@@ -13,7 +13,6 @@ class Login extends Component {
   }
 
   onChange = (event) => {
-    console.log(event.target.value);
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -21,23 +20,22 @@ class Login extends Component {
 
   loginResponse = () => {
     if (this.state.username === "jarvis" && this.state.password === "jarvis") {
-      this.setState({ loginStatus: true });
-      AuthenticationService.successLogin(this.state.username);
+      Authentication.loginSuccessfull(this.state.username);
+      this.setState({
+        loginStatus: true,
+      });
       this.props.history.push(`/welcome/${this.state.username}`);
+      window.location.reload(false);
     } else {
-      this.setState({ loginStatus: false });
+      this.setState({
+        loginStatus: false,
+      });
     }
   };
 
   render() {
     return (
       <div>
-        {/*    {this.state.loginStatus === true ? (
-           <div>Login Successfull</div>
-         ) : (
-           <div>Login Failed</div>
-        )} */}
-
         <div className="login-form">
           <h1 className="text-center"> LOGIN </h1>
           <div className="form-group">
