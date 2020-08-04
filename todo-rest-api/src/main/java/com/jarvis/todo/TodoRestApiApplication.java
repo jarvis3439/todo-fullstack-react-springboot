@@ -9,7 +9,6 @@ public class TodoRestApiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(TodoRestApiApplication.class, args);
 		System.out.println("Spring Boot Application Started...");
-
 	}
 
 }
