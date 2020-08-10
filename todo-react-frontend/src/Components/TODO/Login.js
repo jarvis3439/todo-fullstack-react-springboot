@@ -24,6 +24,7 @@ class Login extends Component {
       this.setState({ loginStatus: true });
       AuthenticationService.successLogin(this.state.username);
       this.props.history.push(`/welcome/${this.state.username}`);
+      window.location.reload(false);
     } else {
       this.setState({ loginStatus: false });
     }

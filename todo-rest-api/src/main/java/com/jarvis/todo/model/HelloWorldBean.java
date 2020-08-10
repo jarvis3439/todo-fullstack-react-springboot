@@ -1,4 +1,4 @@
-package com.jarvis.todo.controller;
+package com.jarvis.todo.model;
 
 public class HelloWorldBean {
 
